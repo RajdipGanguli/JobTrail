@@ -1,43 +1,47 @@
-# JobTrail 🎯
+# 🎯 JobTrail
 
-> A full-stack job application tracker with a real-time Kanban board, KPI metrics, JWT authentication, and a modern dashboard UI.
+A modern, full-stack job application tracker designed to replace messy spreadsheets with an intuitive visual pipeline, actionable conversion analytics, and real-time status management.
 
-Built and maintained by [Rajdip Ganguli](https://github.com/RajdipGanguli).
+🔗 **Live Demo:** [https://job-trail-six.vercel.app](https://job-trail-six.vercel.app)  
+📦 **Repository:** [https://github.com/RajdipGanguli/JobTrail](https://github.com/RajdipGanguli/JobTrail)
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
-- **Pipeline Board:** Drag-and-drop / stage-based application tracking (Applied, Assessment, Interview, Offer, Wishlist, Rejected).
-- **Analytics & KPIs:** Real-time metrics tracking conversion rates, active interviews, and offers.
-- **Authentication:** Secure user signup and login backed by JWT and bcrypt password hashing.
-- **Data Persistence:** Cloud database integration using MongoDB Atlas and Mongoose.
-- **Modern UI:** Built with Vite, React, and styled with Tailwind CSS.
+- **Visual Application Pipeline:** Manage applications across key recruitment stages (Wishlist, Applied, Assessment, Interview, Offer, Rejected).
+- **Conversion Metrics & Insights:** Real-time summary cards tracking active pipelines, total applications, interviews, and offer conversion rates.
+- **Secure Authentication:** Complete registration and login system with encrypted credentials and JWT-based session security.
+- **Automated Testing Suite:** Robust smoke and component tests using Vitest and React Testing Library to ensure UI stability.
+- **Responsive UI:** Clean, modern interface styled with Tailwind CSS and smooth interactions powered by Framer Motion.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React, Vite, Tailwind CSS, Lucide Icons, React Router
-- **Backend:** Node.js, Express.js, MongoDB Atlas, Mongoose
-- **Auth & Security:** JSON Web Tokens (JWT), bcryptjs, CORS
+### Frontend
+- **Framework:** React 19 + Vite
+- **Styling:** Tailwind CSS, Lucide React
+- **Animations:** Framer Motion
+- **State & HTTP:** Axios
+- **Testing:** Vitest, React Testing Library, jsdom
+- **Hosting:** Vercel
+
+### Backend
+- **Runtime:** Node.js + Express.js
+- **Database:** MongoDB Atlas (Mongoose ODM)
+- **Security:** CORS middleware, bcryptjs, JSON Web Tokens (JWT)
+- **Hosting:** Render
 
 ---
 
-## 💻 Local Development
+## 🏗️ Architecture & Deployment
 
-### 1. Backend Setup
-\`\`\`bash
-cd jobtrail-backend
-npm install
-node server.js
-\`\`\`
-*Runs on `http://localhost:5000`*
-
-### 2. Frontend Setup
-\`\`\`bash
-cd jobtrail-frontend
-npm install
-npm run dev
-\`\`\`
-*Runs on `http://localhost:5173`*
+```text
+[ React / Vite Client ]  ──(Vercel)──>  HTTPS / Cross-Origin Requests
+                                                    │
+                                                    ▼
+[ Express REST API ]     ──(Render)──>  CORS Validation & JWT Auth
+                                                    │
+                                                    ▼
+[ MongoDB Atlas ]        ──(Cloud)───>  Encrypted User & Job Data
